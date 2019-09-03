@@ -1,0 +1,15 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: axon-command
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+      path: /h2-console
+logging:
+  level:
+    org:
+      hibernate: debug

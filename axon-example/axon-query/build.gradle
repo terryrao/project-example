@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.1.7.RELEASE'
+    id "io.spring.dependency-management" version "1.0.8.RELEASE"
+}
+
+
+group 'com.github.terryrao'
+version '1.0.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+
+dependencies {
+    implementation "org.axonframework:axon-spring-boot-starter:4.2"
+    implementation "org.springframework.boot:spring-boot-starter"
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+    implementation "org.axonframework:axon:4.2"
+    implementation "com.h2database:h2:1.4.197"
+//    implementation "org.axonframework:axon-test:4.2"
+    runtimeOnly "org.aspectj:aspectjweaver:1.9.4"
+    runtimeOnly "org.springframework:spring-instrument:5.1.9.RELEASE"
+
+
+}
+
+
+test {
+    def  aspectjweaver = classpath.find { it.name.contains("aspectjweaver") }.absolutePath
+    def  spring_instrument = classpath.find { it.name.contains("spring-instrument") }.absolutePath
+    jvmArgs = [ "-javaagent:${spring_instrument}"
+                , "-javaagent:${aspectjweaver}"
+    ]
+
+}
