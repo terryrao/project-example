@@ -17,8 +17,11 @@ dependencies {
     testImplementation "org.springframework.boot:spring-boot-starter-test"
     implementation "org.springframework.boot:spring-boot-starter-web"
     implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+    implementation "com.baomidou:mybatis-plus-boot-starter:3.1.2"
     implementation "org.axonframework:axon:4.2"
     implementation "com.h2database:h2:1.4.197"
+    implementation "mysql:mysql-connector-java:8.0.17"
+
 //    implementation "org.axonframework:axon-test:4.2"
 
 }

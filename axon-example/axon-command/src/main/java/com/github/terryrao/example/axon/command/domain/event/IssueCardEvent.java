@@ -1,12 +1,14 @@
 package com.github.terryrao.example.axon.command.domain.event;
 
 import lombok.Getter;
+import lombok.ToString;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 /**
  * @author raow date: 2019/9/3 18:30
  */
 @Getter
+@ToString
 public class IssueCardEvent {
     @TargetAggregateIdentifier
     private final String cardId;
